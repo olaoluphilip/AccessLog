@@ -1,0 +1,24 @@
+accesslog_index:
+    path:     /
+    defaults: { _controller: "AppBundle:AccessLog:index" }
+    methods:  GET
+
+accesslog_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:AccessLog:show" }
+    methods:  GET
+
+accesslog_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:AccessLog:new" }
+    methods:  [GET, POST]
+
+accesslog_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:AccessLog:edit" }
+    methods:  [GET, POST]
+
+accesslog_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:AccessLog:delete" }
+    methods:  DELETE

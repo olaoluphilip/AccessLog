@@ -1,0 +1,4 @@
+app_accesslog:
+    resource: "@AppBundle/Resources/config/routing/accesslog.yml"
+    prefix:   /accesslog
+

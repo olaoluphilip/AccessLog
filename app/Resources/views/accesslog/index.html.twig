@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>AccessLog list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hostname</th>
+                <th>Identity</th>
+                <th>User</th>
+                <th>Timestamp</th>
+                <th>Requestline</th>
+                <th>Status</th>
+                <th>Objectsize</th>
+                <th>Referal</th>
+                <th>Useragent</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for accessLog in accessLogs %}
+            <tr>
+                <td><a href="{{ path('accesslog_show', { 'id': accessLog.id }) }}">{{ accessLog.id }}</a></td>
+                <td>{{ accessLog.hostname }}</td>
+                <td>{{ accessLog.identity }}</td>
+                <td>{{ accessLog.user }}</td>
+                <td>{{ accessLog.timestamp }}</td>
+                <td>{{ accessLog.requestLine }}</td>
+                <td>{{ accessLog.status }}</td>
+                <td>{{ accessLog.objectSize }}</td>
+                <td>{{ accessLog.referal }}</td>
+                <td>{{ accessLog.userAgent }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('accesslog_show', { 'id': accessLog.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('accesslog_edit', { 'id': accessLog.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('accesslog_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

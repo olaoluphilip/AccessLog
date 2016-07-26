@@ -1,0 +1,48 @@
+AppBundle\Entity\AccessLog:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\AccessLogRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        hostname:
+            type: string
+            length: 255
+        logname:
+            type: string
+            length: 255
+            nullable: true
+        user:
+            type: string
+            length: 255
+            nullable: true
+        stamp:
+            type: string
+            length: 255
+        time:
+            type: string
+            length: 255
+        request:
+            type: string
+            length: 255
+            column: request
+        status:
+            type: string
+            length: 255
+        responseBytes:
+            type: string
+            length: 255
+            column: response_bytes
+        headerReferal:
+            type: string
+            length: 255
+            column: header_referal
+        headerUserAgent:
+            type: string
+            length: 255
+            column: header_user_agent
+    lifecycleCallbacks: {  }

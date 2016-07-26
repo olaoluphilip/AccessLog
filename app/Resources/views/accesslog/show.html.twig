@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>AccessLog</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ accessLog.id }}</td>
+            </tr>
+            <tr>
+                <th>Hostname</th>
+                <td>{{ accessLog.hostname }}</td>
+            </tr>
+            <tr>
+                <th>Identity</th>
+                <td>{{ accessLog.identity }}</td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td>{{ accessLog.user }}</td>
+            </tr>
+            <tr>
+                <th>Timestamp</th>
+                <td>{{ accessLog.timestamp }}</td>
+            </tr>
+            <tr>
+                <th>Requestline</th>
+                <td>{{ accessLog.requestLine }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ accessLog.status }}</td>
+            </tr>
+            <tr>
+                <th>Objectsize</th>
+                <td>{{ accessLog.objectSize }}</td>
+            </tr>
+            <tr>
+                <th>Referal</th>
+                <td>{{ accessLog.referal }}</td>
+            </tr>
+            <tr>
+                <th>Useragent</th>
+                <td>{{ accessLog.userAgent }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('accesslog_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('accesslog_edit', { 'id': accessLog.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
